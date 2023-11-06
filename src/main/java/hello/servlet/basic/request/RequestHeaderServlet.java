@@ -10,11 +10,13 @@ import java.util.Enumeration;
 public class RequestHeaderServlet extends HttpServlet {
 
     @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response){
+    protected void service(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         printStartLine(request);
         printHeaders(request);
         printHeaderUtils(request);
         printEtc(request);
+        response.getWriter().write("ok");
+
     }
     //start line 정보
     private void printStartLine(HttpServletRequest request) {
