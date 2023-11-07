@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-                                            //front-controller/v1 를 포함한 하위 모든 요청은 이 서블릿에서 받아들인다.
-@WebServlet(name = "frontControllerServletV1", urlPatterns = "front-controller/v1/*")
-public class FrontControllerServletV1 extends HttpServlet {
+                                            //front-controller/v1 를 포함한 하위 모든 요청은 이 서블릿을 호출.
+@WebServlet(name = "frontControllerServletV1", urlPatterns = "/front-controller/v1/*")
+        public class FrontControllerServletV1 extends HttpServlet {
     //요청을 저장한다.
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
 
